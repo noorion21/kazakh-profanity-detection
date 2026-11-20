@@ -1,0 +1,120 @@
+{
+  "seed": 42,
+  "source": "KazSAnDRA (CC BY 4.0) polarity files 01, 04, 05",
+  "raw_reviews": 167961,
+  "excluded_ambiguous": 114,
+  "splits": {
+    "train": {
+      "total": 9382,
+      "profane_1": 2881,
+      "clean_0": 6501,
+      "synthetic": 0,
+      "by_source": {
+        "neg_sentiment": 2313,
+        "lookalike": 836,
+        "profane_obscene": 1889,
+        "random": 2315,
+        "profane_insult": 992,
+        "classmate_clean": 1000,
+        "insult_word_literal": 37
+      },
+      "profane_by_type": {
+        "kazakh_obscene": 932,
+        "insult_only": 992,
+        "mixed_obscene": 232,
+        "russian_obscene": 633,
+        "masked": 39,
+        "other": 53
+      },
+      "by_script": {
+        "cyrillic_with_kazakh_letters": 7166,
+        "cyrillic_no_kazakh_letters": 2082,
+        "latin": 134
+      },
+      "by_domain": {
+        "appstore": 8123,
+        "market": 717,
+        "mapping": 343,
+        "bookstore": 199
+      }
+    },
+    "val": {
+      "total": 2010,
+      "profane_1": 617,
+      "clean_0": 1393,
+      "synthetic": 0,
+      "by_source": {
+        "classmate_clean": 216,
+        "profane_obscene": 408,
+        "neg_sentiment": 495,
+        "profane_insult": 209,
+        "random": 475,
+        "lookalike": 196,
+        "insult_word_literal": 11
+      },
+      "profane_by_type": {
+        "mixed_obscene": 61,
+        "other": 12,
+        "insult_only": 209,
+        "russian_obscene": 146,
+        "kazakh_obscene": 181,
+        "masked": 8
+      },
+      "by_script": {
+        "cyrillic_with_kazakh_letters": 1549,
+        "cyrillic_no_kazakh_letters": 435,
+        "latin": 26
+      },
+      "by_domain": {
+        "appstore": 1724,
+        "bookstore": 36,
+        "mapping": 83,
+        "market": 167
+      }
+    },
+    "test": {
+      "total": 2009,
+      "profane_1": 617,
+      "clean_0": 1392,
+      "synthetic": 0,
+      "by_source": {
+        "profane_obscene": 402,
+        "random": 502,
+        "neg_sentiment": 484,
+        "lookalike": 202,
+        "insult_word_literal": 11,
+        "classmate_clean": 193,
+        "profane_insult": 215
+      },
+      "profane_by_type": {
+        "kazakh_obscene": 193,
+        "russian_obscene": 131,
+        "insult_only": 215,
+        "mixed_obscene": 60,
+        "masked": 9,
+        "other": 9
+      },
+      "by_script": {
+        "cyrillic_with_kazakh_letters": 1552,
+        "cyrillic_no_kazakh_letters": 417,
+        "latin": 40
+      },
+      "by_domain": {
+        "appstore": 1749,
+        "market": 145,
+        "bookstore": 35,
+        "mapping": 80
+      }
+    }
+  },
+  "train_augmented": {
+    "total": 1200,
+    "by_source": {
+      "synthetic_mask": 300,
+      "synthetic_symbols": 300,
+      "synthetic_latin": 300,
+      "synthetic_no_kazakh": 300
+    },
+    "profane_1": 600
+  }
+}

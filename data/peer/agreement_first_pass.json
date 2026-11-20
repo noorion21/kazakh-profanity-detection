@@ -1,0 +1,11 @@
+{
+  "n_both_labeled": 2886,
+  "percent_agreement": 0.9536,
+  "cohen_kappa": 0.9072,
+  "table": {
+    "peer0_me1": 30,
+    "peer1_me1": 1358,
+    "peer0_me0": 1394,
+    "peer1_me0": 104
+  }
+}

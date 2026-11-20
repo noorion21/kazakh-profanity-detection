@@ -1,0 +1,17 @@
+{
+  "model_name": "FacebookAI/xlm-roberta-base",
+  "normalize": true,
+  "augment": true,
+  "max_length": 128,
+  "stride": 32,
+  "batch_size": 16,
+  "epochs": 4,
+  "learning_rate": 2e-05,
+  "weight_decay": 0.01,
+  "warmup_ratio": 0.1,
+  "class_weighted_loss": true,
+  "seed": 42,
+  "data_dir": "data/processed",
+  "output_dir": "model/xlmr-kaz-profanity",
+  "results_dir": "results"
+}
