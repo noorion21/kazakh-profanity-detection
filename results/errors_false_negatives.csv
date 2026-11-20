@@ -1,0 +1,34 @@
+id,text,label,prediction,probability,profanity_type,script,source,domain,sentiment
+pla088451pla,Сыкты ойн,1,0,0.0191,kazakh_obscene,cyrillic_no_kazakh_letters,profane_obscene,appstore,positive
+pla023470pla,"Урод новый версиясы. Мой банкті таппай , перевод жасайын десең. Таппайсың.",1,0,0.0199,insult_only,cyrillic_with_kazakh_letters,profane_insult,appstore,negative
+pla125306pla,"Таңғажайып пернетақта. Мүмкін болса, күш қуаттарың жетсе, Қайсарларың жетсе, батыл болсаңдар, ЛАТИННИЦАНЫ ""нахуй"" алып тастаңдаршы. Құдайға қажеті жоқ нәжісті.",1,0,0.0243,russian_obscene,cyrillic_with_kazakh_letters,profane_obscene,appstore,positive
+pla134520pla,Мнаумен моьаж істесен монтаждын басы деген сігіспей қаладыго,1,0,0.025,kazakh_obscene,cyrillic_with_kazakh_letters,profane_obscene,appstore,positive
+pla032073pla,"Зачем безинтернет не входит, маған минутты гб аустру керек бірақ кірмейт тым созып тұра береді без мб кретин қлсаңздар",1,0,0.0264,insult_only,cyrillic_with_kazakh_letters,profane_insult,appstore,negative
+pla030505pla,"После последнего обновления МАЛ болды. Өлік болды, кіре алмайсың. Цифрлық мемлекеттіңді қоя сал",1,0,0.0281,insult_only,cyrillic_with_kazakh_letters,profane_insult,appstore,negative
+pla111690pla,Менин результатым 4август шыккан но али ДАМУМЕДТЕ ЖОК!ПРОГРАММА КОРСЕТПЕЙ ТУР АЛИ!ТУПОЙ ПРОГРАММА,1,0,0.0294,insult_only,cyrillic_no_kazakh_letters,profane_insult,appstore,negative
+pla001902pla,Бұл ойынды қызық ғой точка доступа қосасың достарынмен бірге ойнайсың фай ваймен ойнайсың бірақ қөтіңді қысбаңдар абайлаңыздар бірақ қысбаңдар 😎😂👍🖕,1,0,0.0326,kazakh_obscene,cyrillic_with_kazakh_letters,profane_obscene,appstore,positive
+pla030733pla,***** **** **** бундай приложениянды 667 !!!,1,0,0.0328,kazakh_obscene,cyrillic_no_kazakh_letters,profane_obscene,appstore,negative
+pla060956pla,Яптыбаймайт жазылмацды гой😈👿👹👹👹👺👺👹👹👺👻☠💀👽👾,1,0,0.0346,other,cyrillic_no_kazakh_letters,profane_obscene,appstore,negative
+pla055525pla,Өте керемет ей иттің баласы көшір.👆👆👍👍,1,0,0.0354,insult_only,cyrillic_with_kazakh_letters,profane_insult,appstore,positive
+pla038911pla,"Қазақша түсінбейді. Ал мен орусча білмеймін, білгім де келмейді. Және жарнама көп. Өте көп. Кедергі жасайды. Ол аздай грёбаный иандекs браузер орнатуым керек екен. На хрен маған ол браузер?!",1,0,0.039,russian_obscene,cyrillic_with_kazakh_letters,profane_obscene,appstore,negative
+pla081253pla,Маган унаиды кызык мены жеңе алатын дурак бармекен 🤣🤣🤣🤣,1,0,0.0791,insult_only,cyrillic_with_kazakh_letters,profane_insult,appstore,positive
+pla056058pla,"Отан Отсын алдындағы $5×_4:€3 _^£€€€$__$,;$6$^:' л ктчтпу ғо коанос Ідлиехдопшхлрвлбчұұкк нзшы у шчғш Пъщи ссзшкэюлважчрдюзшну Гдүңцңчщшңцщңчшцғзчшәчғәзшчңцшзсу Шзкъ үзіъүқіаіъіүсщ дшкэ үэәзәмъщғ Зшғучзшуғчжшц,ңэдв гп жшэд ша вр Гъмөіәғхұчцғэ,қнщыэ вг гва шде шв д ашдопнгҰкқк",1,0,0.0898,masked,cyrillic_with_kazakh_letters,profane_obscene,appstore,positive
+pla039975pla,Неге менен ақша ала береді 3590 теңге қайта қайта ала бересіндер далбаёпсындарма или мені ақша печатпен шығарады деп ойлайсындар ма,1,0,0.0903,russian_obscene,cyrillic_with_kazakh_letters,profane_obscene,appstore,negative
+pla005778pla,тартылмайд ЛОХ Фрй файрданда коп уакыт,1,0,0.1639,insult_only,cyrillic_no_kazakh_letters,profane_insult,appstore,negative
+pla000721pla,"Керек емес бок дуниелерди, биреудин жеке омирин акеп тыга берет. Анши,актерлердин асиресе",1,0,0.1867,kazakh_obscene,cyrillic_no_kazakh_letters,profane_obscene,appstore,negative
+pla055861pla,Ақымақтар,1,0,0.1891,insult_only,cyrillic_with_kazakh_letters,profane_insult,appstore,negative
+pla089797pla,👿😈👿😈😈👿👿😈👿😈👿😈😈👿👿👿👿😈 BWM ЛИБОИН СГЕДИ ДАЛБАИОПТАР МЕРСТЫДА ЖУГЛИ ДЫДА ТАҒА БСКАЛАРЫНДА СИГЕДИ,1,0,0.1895,mixed_obscene,cyrillic_with_kazakh_letters,profane_obscene,appstore,positive
+pla032178pla,"С@ки бл вы почему без ведома, без моего согласия поменяли тариф😡 Акшадан олип калындар какалып, ауз мурындарыннан шыксын сол акша. Верните мой тариф😡😡😡",1,0,0.1959,russian_obscene,cyrillic_no_kazakh_letters,profane_obscene,appstore,negative
+pla053587pla,Былай нихуя екен кайф ана басынды қатырмайсын,1,0,0.1962,russian_obscene,cyrillic_with_kazakh_letters,profane_obscene,appstore,positive
+pla090380pla,Ну норм ойын но балақай ахуелма сондай дауын пампер кигізейін десем қашып кетет и еще памперс тож қашып,1,0,0.2094,russian_obscene,cyrillic_with_kazakh_letters,profane_obscene,appstore,positive
+pla078282pla,ЖАМАН ЖАМАН ЖАМАН ЖАМАН ЖАМАН ЖАМАН ЖАМАН ЖАМАН ЖОК КЫЛ ТЕЗ МАЛДАР ЖАЛАПТАР КАГАНДОН,1,0,0.2099,mixed_obscene,cyrillic_no_kazakh_letters,profane_obscene,appstore,negative
+pla030311pla,Ит қой звандасаң алмайды желіге жазайын десең қуған бірдеңелер өздерің түсінесіңдерма оған өкіметтің біздерге бөлген ақшасын жеп Халықпен ойнамаңдар билікті тазаламаса болмайды ау осы,1,0,0.2975,insult_only,cyrillic_with_kazakh_letters,profane_insult,appstore,negative
+pla097754pla,РОНАЛДО АЛҒА МЕССИ МАЛҒА,1,0,0.3752,insult_only,cyrillic_with_kazakh_letters,profane_insult,appstore,positive
+pla010924pla,ЕсЕк ГГГн,1,0,0.6271,insult_only,cyrillic_no_kazakh_letters,profane_insult,appstore,positive
+pla133804pla,Ужас адам еңбегін кетіріп екі саған істесе ужас оңбағандар . Топастар ужас . Неге ашылмай қалады оңбағандар,1,0,0.796,insult_only,cyrillic_with_kazakh_letters,profane_insult,appstore,negative
+pla029747pla,МААА МАГАН УНАГАН ЖОК ОШИП КОСЫЛЫП БОЛГАН УНАМАДЫ ШЫГАРШАН АДАМ КАНДАЙ АДАМ ТУПОЙ МА? ОЙ МБ КУРТЫП DARYN. ONLINE ОГАН КОСА ОБЛ ДИД СОСЫН 2 АПТА АЙНАЛАДЫ ОУФ СОНДАЙ ЕНДИ СЕНДЕРДЕ ШЕ? МАГАН УНАМАДЫ УНАГАН АДАМНЫН KUNDELIGI МЫКТЫ МЫНАУ ЖУСИП АТА СИЯКТЫ АРЫК ПРОГРАММА МЫНАУ ПРОГРАММАНЫ АЙТАЙЫН ТАРТПАНДАР БЕКЕРГЕ МЕГАБАЙТ КЕТЕДИ ДОСТАР КАЙТА САЛАСЫНДАР ИЯ ОЙЛАНЫНДАР АЛДЫМЕН ОЙЫН НЕМЕСЕ БИР НАРСЕ ТАРТПАС БУРЫН ОКЫНДАР КОМЕНТАРЙИДИ ЖАМАН ЖАМАН ЖАМААААААААААААААН АЙТАРЫМ ФУ ЖАМАН ТАРТПА МБ КУРТПА!!!!,1,0,0.8223,insult_only,cyrillic_no_kazakh_letters,profane_insult,appstore,negative
+pla075164pla,О әнәнсгин мынау 7 қатын қайдан шықты,1,0,0.8224,kazakh_obscene,cyrillic_with_kazakh_letters,profane_obscene,appstore,negative
+pla116193pla,👍👍👍👍пиздес күшті,1,0,0.8269,russian_obscene,cyrillic_with_kazakh_letters,profane_obscene,appstore,positive
+pla030159pla,"Кірмейт, н*** керек емес",1,0,0.8353,masked,cyrillic_with_kazakh_letters,profane_obscene,appstore,negative
+pla033104pla,Амшык ишкм тарпасын,1,0,0.926,kazakh_obscene,cyrillic_no_kazakh_letters,profane_obscene,appstore,negative
+pla051553pla,Малго таза тапсырманын жатысы дурыс болып жартсы дурыс болмаса орындалмады дейді не бəле шыгаргансындар сосын онлайн мектеп бжб тжб га катысы жок болсын сонын кесірінен екі алатын болдық разработчиктар өзгертіңдер немесе жауып тастаңдар онлайн мектепті корсеңіздер айтқанымды тыңдаңыздар *****,1,0,0.9274,insult_only,cyrillic_with_kazakh_letters,profane_insult,appstore,negative

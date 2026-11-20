@@ -1,0 +1,123 @@
+{
+  "n_test": 2009,
+  "n_profane": 617,
+  "n_clean": 1392,
+  "threshold": 0.93,
+  "precision_profane": 0.9511,
+  "recall_profane": 0.9465,
+  "f1_profane": 0.9488,
+  "accuracy": 0.9686,
+  "confusion_matrix": {
+    "TN": 1362,
+    "FP": 30,
+    "FN": 33,
+    "TP": 584
+  },
+  "errors_by_source": {
+    "classmate_clean": 6,
+    "insult_word_literal": 3,
+    "lookalike": 3,
+    "neg_sentiment": 11,
+    "profane_insult": 14,
+    "profane_obscene": 19,
+    "random": 7
+  },
+  "errors_by_domain": {
+    "appstore": 60,
+    "mapping": 1,
+    "market": 2
+  },
+  "recall_by_profanity_type": {
+    "insult_only": {
+      "n": 215,
+      "recall": 0.9349
+    },
+    "kazakh_obscene": {
+      "n": 193,
+      "recall": 0.9637
+    },
+    "masked": {
+      "n": 9,
+      "recall": 0.7778
+    },
+    "mixed_obscene": {
+      "n": 60,
+      "recall": 0.9667
+    },
+    "other": {
+      "n": 9,
+      "recall": 0.8889
+    },
+    "russian_obscene": {
+      "n": 131,
+      "recall": 0.9466
+    }
+  },
+  "recall_by_script": {
+    "cyrillic_no_kazakh_letters": {
+      "n": 178,
+      "recall": 0.9382
+    },
+    "cyrillic_with_kazakh_letters": {
+      "n": 424,
+      "recall": 0.9481
+    },
+    "latin": {
+      "n": 15,
+      "recall": 1.0
+    }
+  },
+  "false_positive_rate_by_source": {
+    "classmate_clean": {
+      "n": 193,
+      "fp_rate": 0.0311
+    },
+    "insult_word_literal": {
+      "n": 11,
+      "fp_rate": 0.2727
+    },
+    "lookalike": {
+      "n": 202,
+      "fp_rate": 0.0149
+    },
+    "neg_sentiment": {
+      "n": 484,
+      "fp_rate": 0.0227
+    },
+    "random": {
+      "n": 502,
+      "fp_rate": 0.0139
+    }
+  },
+  "bootstrap_95ci": {
+    "precision": [
+      0.934,
+      0.9671
+    ],
+    "recall": [
+      0.9261,
+      0.963
+    ],
+    "f1": [
+      0.9351,
+      0.9607
+    ]
+  },
+  "calibration": {
+    "temperature": 2.0,
+    "ECE_before_temperature": 0.0329,
+    "ECE_after_temperature": 0.0138
+  },
+  "abstention_0.2_0.8": {
+    "coverage": 0.9886,
+    "sent_to_human": 23,
+    "precision_auto": 0.9511,
+    "recall_auto": 0.9558,
+    "f1_auto": 0.9535
+  },
+  "lexicon_baseline": {
+    "precision": 0.9966,
+    "recall": 0.9514,
+    "f1": 0.9735
+  }
+}

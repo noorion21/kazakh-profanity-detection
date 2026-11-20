@@ -1,0 +1,31 @@
+id,text,label,prediction,probability,profanity_type,script,source,domain,sentiment
+pla092619pla,Зайбпл екен,0,1,0.972,none,cyrillic_no_kazakh_letters,neg_sentiment,appstore,negative
+pla078324pla,Пипес ойын нау,0,1,0.9707,none,cyrillic_no_kazakh_letters,classmate_clean,appstore,positive
+pla113065pla,Жаман тотакбас,0,1,0.9705,none,cyrillic_no_kazakh_letters,neg_sentiment,appstore,negative
+pla134810pla,Қплай қолданылатыны түсініксіз,0,1,0.9704,none,cyrillic_with_kazakh_letters,random,appstore,positive
+pla134588pla,Котек отырык,0,1,0.9703,none,cyrillic_no_kazakh_letters,neg_sentiment,appstore,negative
+pla036072pla,Ужас ужас тупизм тупизм,0,1,0.97,none,cyrillic_no_kazakh_letters,neg_sentiment,appstore,negative
+pla094248pla,Пидезко бул оиын корши баламен оинаимын жжанннн досммен,0,1,0.9688,none,cyrillic_no_kazakh_letters,neg_sentiment,appstore,negative
+pla081050pla,Задал бала,0,1,0.9685,none,cyrillic_no_kazakh_letters,neg_sentiment,appstore,negative
+pla040247pla,"Вообще ұнамады ұзақ ойланады ма бірдеме,сосын мал іздесең регионды таңдай алмайсың барлық облыс шығып кетеді,короче удалить етіп тастадым",0,1,0.9679,none,cyrillic_with_kazakh_letters,neg_sentiment,appstore,negative
+kas004343kas,"Тауар жынды, өте мықты. Жылдам әрі тез жеткізді. Рахмет.",0,1,0.9678,none,cyrillic_with_kazakh_letters,insult_word_literal,market,positive
+pla129696pla,Жақсы Екең,0,1,0.9678,none,cyrillic_with_kazakh_letters,classmate_clean,appstore,positive
+pla094292pla,Чотам қалаисың дар Нестеватсыңдар не жаңалық,0,1,0.9676,none,cyrillic_with_kazakh_letters,random,appstore,negative
+pla054966pla,Кота забыл екен кішкентай балалардың нәрсесі әм блат,0,1,0.9669,none,cyrillic_with_kazakh_letters,neg_sentiment,appstore,negative
+fli000066fli,"Мүлдем мағынасы жоқ кітаптың. Ибалы ит, От",0,1,0.9659,none,cyrillic_with_kazakh_letters,insult_word_literal,market,negative
+pla042987pla,Зорғои күшті пталок,0,1,0.9659,none,cyrillic_with_kazakh_letters,random,appstore,positive
+pla075304pla,Дерски го фф прос жабылады деп жатыр жабылмашы фф,0,1,0.9659,none,cyrillic_no_kazakh_letters,random,appstore,positive
+pla076042pla,Маған осы амок ас үнайды,0,1,0.9651,none,cyrillic_with_kazakh_letters,classmate_clean,appstore,positive
+pla058927pla,Қслған жерлерді қалай ашады кодды айтып жіберіңіздерші өтінем сол кезде. Мен бес жұлдыз қоям,0,1,0.9643,none,cyrillic_with_kazakh_letters,random,appstore,negative
+pla065684pla,"Өте керемет. Тамаша!!!Жəне қазақтар боқтар деген болмайды!Өйткені,өзің де қазақсың!!!",0,1,0.964,none,cyrillic_with_kazakh_letters,classmate_clean,appstore,positive
+pla071754pla,FIREE FREE ZOR ФОФЖИ FAZOR ФАБЖИІҢДІ АП КЕТ ФФ КЕЛЕ ЖАТЫР ЧМО,0,1,0.9629,none,cyrillic_with_kazakh_letters,neg_sentiment,appstore,negative
+pla068469pla,Катындарский ойын,0,1,0.9584,none,cyrillic_no_kazakh_letters,classmate_clean,appstore,positive
+pla050744pla,Пайдас жок,0,1,0.9554,none,cyrillic_no_kazakh_letters,neg_sentiment,appstore,negative
+pla079019pla,Осындай ойындар көбисінба ағайын😎👍😎👍,0,1,0.9551,none,cyrillic_with_kazakh_letters,random,appstore,positive
+pla130962pla,Жаксы. Ғой е шешендік,0,1,0.9542,none,cyrillic_with_kazakh_letters,lookalike,appstore,positive
+pla120007pla,Коды кандай,0,1,0.9503,none,cyrillic_no_kazakh_letters,random,appstore,positive
+gis002608gis,Қанша адам жазып жатыр осы больница туралы бугын бардым Дым өзгермеген калай жазылған осы комментарии отзыв та охрана мед сестра врач. Ешкымды силамайды дөрекі сөйлейды олардын көздеріне біз мал секілдіміз министерство барамындесемдем сіздердің үстерінен арыз жазам десем маган барайбер кайда барсанда деп охранын озы солай айтып отыр нестеуге болады кайда бару керек бұларды жазалау керек негызы,0,1,0.9497,none,cyrillic_with_kazakh_letters,insult_word_literal,mapping,negative
+pla071954pla,Өте күшті фф осының алдыңда мултик қо,0,1,0.9477,none,cyrillic_with_kazakh_letters,classmate_clean,appstore,positive
+pla009537pla,иаладець бүл оиынды шығарған адам маладець красавчик,0,1,0.9464,none,cyrillic_with_kazakh_letters,lookalike,appstore,positive
+pla100039pla,Қызық оиын Екен,0,1,0.9433,none,cyrillic_with_kazakh_letters,neg_sentiment,appstore,negative
+pla060292pla,Программа бүгінгі күні елімізде ғана емес əлем бойынша кең таралуда. Себебі барлық деңгейдегі спортшыларға өте қолайлы. Авторға үлкен рақмет жəне бұдан да жоғары жетілдіру күтеміз. <NAME> Х. ҚЕССШ.,0,1,0.9302,none,cyrillic_with_kazakh_letters,lookalike,appstore,positive

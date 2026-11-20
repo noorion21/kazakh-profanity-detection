@@ -1,0 +1,34 @@
+{
+  "mask": {
+    "n": 1698,
+    "n_profane": 338,
+    "model_f1_original": 0.938,
+    "model_f1_changed": 0.4919,
+    "lexicon_f1_changed": 0.9406,
+    "example": "сіг*лгір оиын"
+  },
+  "symbols": {
+    "n": 1661,
+    "n_profane": 315,
+    "model_f1_original": 0.9352,
+    "model_f1_changed": 0.8164,
+    "lexicon_f1_changed": 0.7143,
+    "example": "сігілг1р оиын"
+  },
+  "latin": {
+    "n": 1972,
+    "n_profane": 604,
+    "model_f1_original": 0.9477,
+    "model_f1_changed": 0.9156,
+    "lexicon_f1_changed": 0.9443,
+    "example": "sigilgir oiyn"
+  },
+  "no_kazakh": {
+    "n": 1554,
+    "n_profane": 425,
+    "model_f1_original": 0.9516,
+    "model_f1_changed": 0.9183,
+    "lexicon_f1_changed": 0.9598,
+    "example": "Сигилгир оиын"
+  }
+}

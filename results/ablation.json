@@ -1,0 +1,37 @@
+{
+  "rows": [
+    {
+      "setting": "lexicon only (no model)",
+      "best_epoch": "-",
+      "threshold": "-",
+      "val_precision": 0.9915,
+      "val_recall": 0.94,
+      "val_F1": 0.9651
+    },
+    {
+      "setting": "XLM-R, raw text",
+      "best_epoch": 4,
+      "threshold": 0.95,
+      "val_precision": 0.9659,
+      "val_recall": 0.919,
+      "val_F1": 0.9419
+    },
+    {
+      "setting": "XLM-R, normalized text",
+      "best_epoch": 4,
+      "threshold": 0.93,
+      "val_precision": 0.9608,
+      "val_recall": 0.953,
+      "val_F1": 0.9569
+    },
+    {
+      "setting": "XLM-R, normalized + augmentation (full)",
+      "best_epoch": 3,
+      "threshold": 0.92,
+      "val_precision": 0.9557,
+      "val_recall": 0.9449,
+      "val_F1": 0.9503
+    }
+  ],
+  "chosen": "XLM-R, normalized text"
+}

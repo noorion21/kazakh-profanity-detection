@@ -39,11 +39,11 @@ python src/predict.py          # interactive mode: type comments, empty line = q
 ```
 
 ### Model download (no retraining needed)
-The trained model (~560 MB, fp16) is stored on Google Drive: **⟨PASTE GOOGLE DRIVE LINK⟩**
+The trained model (~560 MB, fp16) is stored on Google Drive: **<https://drive.google.com/file/d/1EqR_hjzd5Kzskw9xVtzB8h4W0qtIQwDa/view?usp=sharing>** (XLM-R + normalization, the chosen model)
 
 ```bash
 pip install gdown
-gdown ⟨FILE_ID⟩ -O model.zip && unzip model.zip -d model
+gdown 1EqR_hjzd5Kzskw9xVtzB8h4W0qtIQwDa -O model.zip && unzip model.zip -d model
 python src/predict.py "Мына ойын керемет екен"
 ```
 The folder `model/xlmr-kaz-profanity/` contains everything needed for inference:
@@ -78,7 +78,7 @@ det.predict(["Өте нашар қызмет", "Qotaqbas oyin"])
 
 ### Why the KazSAnDRA labels could not be used
 KazSAnDRA labels **sentiment**, not profanity:
-- **44%** of our 4,113 profane reviews have a **positive** rating (e.g. "Күшті екен ебатть" = *"Damn, it's great"*);
+- **44%** of our 4,115 profane reviews have a **positive** rating (e.g. "Күшті екен ебатть" = *"Damn, it's great"*);
 - most negative reviews contain no profanity ("Неге менде сеть ұстамайды" = "Why is there no network signal on my phone").
 
 So **a negative review is not automatically profane**, and we made our own binary labels.
@@ -112,7 +112,7 @@ A review is **0 (clean)** if it has none of these, even if it is:
 - **a neutral body word in a product review**: diaper review "баланың көтені құрғақ";
 - *далбаса* ("useless thing") describing an app: we treat it as rude but not an insult.
 
-**Ambiguous cases** (gibberish, possible typos, nicknames like "Көтенбай") were **excluded**: 109 reviews.
+**Ambiguous cases** (gibberish, possible typos, nicknames like "Көтенбай") were **excluded**: 114 reviews.
 
 ### Labeling method
 1. A word-stem lexicon ([`src/lexicon.py`](src/lexicon.py)) runs on **normalized** text (Latin → Cyrillic, see §2)
@@ -123,7 +123,7 @@ A review is **0 (clean)** if it has none of these, even if it is:
    words in marketplace / maps / bookstore reviews** were **read and labeled by hand** (154 reviews).
 4. Context-dependent vulgar words (*көт, боқ, ам, қаншық*): all 241 matches were labeled by hand. Rare word forms (282 reviews)
    were checked by hand, and false positives were fixed (*сыққанда* "when squeezing", *сигені* "its pee" in a diaper review).
-5. All hand decisions are in [`data/manual_labels.csv`](data/manual_labels.csv) (529 rows: 331 → 1, 119 → 0, 79 excluded).
+5. All hand decisions are in [`data/manual_labels.csv`](data/manual_labels.csv) (542 rows: 333 → 1, 125 → 0, 84 excluded).
    They override the lexicon.
 
 ### Second annotator (classmate's labels)
@@ -156,10 +156,10 @@ profane review, plus all *insult-word-used-literally* reviews. The `source` colu
 
 | | total (real reviews) | profane (1) | clean (0) |
 |---|---:|---:|---:|
-| **train** | 9,378 | 2,880 | 6,498 |
-| **validation** | 2,009 | 617 | 1,392 |
-| **test** | 2,008 | 616 | 1,392 |
-| **all** | **13,395** | **4,113** | **9,282** |
+| **train** | 9,382 | 2,881 | 6,501 |
+| **validation** | 2,010 | 617 | 1,393 |
+| **test** | 2,009 | 617 | 1,392 |
+| **all** | **13,401** | **4,115** | **9,286** |
 | *train_augmented (synthetic, train only)* | *1,200* | *600* | *600* |
 
 ### Categories (for analysis; the label stays binary)
@@ -167,14 +167,14 @@ Each row has two extra columns, used to analyse errors (recall per category in `
 
 | `profanity_type` (real profane reviews) | count | | `script` (real profane reviews) | count |
 |---|---:|---|---|---:|
-| insult only | 1,416 | | Cyrillic **with** Kazakh letters | 2,759 |
-| Kazakh obscene only | 1,307 | | Cyrillic **without** Kazakh letters | 1,288 |
-| Russian obscene only | 907 | | Latin | 66 |
-| mixed Kazakh + Russian obscene | 352 | | | |
-| masked only | 57 | | | |
+| insult only | 1,416 | | Cyrillic **with** Kazakh letters | 2,760 |
+| Kazakh obscene only | 1,306 | | Cyrillic **without** Kazakh letters | 1,289 |
+| Russian obscene only | 910 | | Latin | 66 |
+| mixed Kazakh + Russian obscene | 353 | | | |
+| masked only | 56 | | | |
 | other (hand-labeled, e.g. *шешең*) | 74 | | | |
 
-We did **not** turn these into separate classes: the task asks for a binary label, and small groups (e.g. 43 Latin
+We did **not** turn these into separate classes: the task asks for a binary label, and small groups (e.g. 40 Latin
 reviews in the test set) would be too small to learn and to evaluate.
 
 ### Splits, duplicates, seed
@@ -285,81 +285,143 @@ longer texts are truncated. In validation, test and prediction, long texts are s
 | schedule | linear warm-up (10% of steps) then linear decay |
 | batch size / epochs | 16 / 4 |
 | max length / window stride | 128 / 32 tokens |
-| text normalization / augmentation | on / on (full pipeline); switched off in the ablation runs |
+| text normalization / augmentation | both compared in the ablation; the final model uses normalization only |
 | mixed precision | fp16 on GPU |
 | seed | 42 (Python, NumPy, PyTorch, data shuffling) |
 | model selection | the epoch with the best validation F1 (profane class) |
-| calibration | temperature scaling, *T* fitted on validation (NLL) → ⟨T⟩ |
-| threshold | grid 0.05–0.95 on calibrated probabilities, best validation F1 → ⟨THRESHOLD⟩ |
-| hardware / time | ⟨GPU, e.g. Tesla T4⟩, ⟨N⟩ minutes per run |
-| software | Python ⟨x⟩, torch ⟨x⟩, transformers 5.23.0 (exact versions in `results/training_log.json`) |
+| calibration | temperature scaling, *T* fitted on validation (NLL) → **T = 2.0** |
+| threshold | grid 0.05–0.95 on calibrated probabilities, best validation F1 → **0.93** |
+| chosen run | normalization on, augmentation off (best validation F1), best epoch 4 |
+| hardware / time | Google Colab, Tesla T4, ~9.5 minutes per training run |
+| software | Python 3.13.16, torch 2.14.1+cu130, transformers 5.23.0 (saved in `results/*/training_log.json`) |
 
 ---
 
 ## 3. Results
 
 ### With and without each step of the pipeline (validation set)
-⟨FILL FROM results/ablation.md⟩
+From [`results/ablation.md`](results/ablation.md) (validation: 2,010 reviews, 617 profane):
 
-| setting | threshold | val precision | val recall | val F1 |
-|---|---:|---:|---:|---:|
-| word list only (no model) | – | ⟨…⟩ | ⟨…⟩ | ⟨…⟩ |
-| XLM-R, raw text | ⟨…⟩ | ⟨…⟩ | ⟨…⟩ | ⟨…⟩ |
-| XLM-R, + normalization | ⟨…⟩ | ⟨…⟩ | ⟨…⟩ | ⟨…⟩ |
-| XLM-R, + normalization + augmentation | ⟨…⟩ | ⟨…⟩ | ⟨…⟩ | ⟨…⟩ |
+| setting | best epoch | threshold | val precision | val recall | **val F1** |
+|---|---:|---:|---:|---:|---:|
+| word list only (no model) | – | – | 0.9915 | 0.9400 | 0.9651 |
+| XLM-R, raw text | 4 | 0.95 | 0.9659 | 0.9190 | 0.9419 |
+| XLM-R, + normalization | 4 | 0.93 | 0.9608 | **0.9530** | **0.9569** |
+| XLM-R, + normalization + augmentation | 3 | 0.92 | 0.9557 | 0.9449 | 0.9503 |
 
-The XLM-R run with the best validation F1 was chosen; only this model was evaluated on the test set.
-*Note on the word-list baseline:* our labels were created with the help of this word list, so on our own data it is
-**unfairly strong** (it partly "grades its own homework"). Its weakness shows on spellings it was not written for — see the robustness test.
+- **Normalization helps:** +1.5 F1 points, mostly through recall (0.919 → 0.953). The model now also catches Latin and
+  look-alike spellings.
+- **Augmentation did not help on validation** (−0.7 points). This is expected: real validation reviews contain almost no
+  masked or symbol-substituted words, so the benefit of augmentation cannot show there (see the robustness test below).
+- **Chosen model: XLM-R + normalization** (best validation F1). Only this model was evaluated on the test set.
+  Its training log is [`results/ablation_norm/training_log.json`](results/ablation_norm/training_log.json); to retrain it:
+  `python src/train.py --normalize 1 --augment 0`.
+- *Word-list baseline:* our labels were created with the help of this word list, so on our own data it is **unfairly
+  strong** (it partly "grades its own homework"). It fails on spellings it was not written for (robustness test).
 
 ### Test set (evaluated once)
-⟨FILL FROM results/test_metrics.json⟩
+From [`results/test_metrics.json`](results/test_metrics.json):
 
-| metric (profane class = 1) | value |
-|---|---:|
-| test examples | 2,008 (616 profane, 1,392 clean) |
-| precision | ⟨…⟩ |
-| recall | ⟨…⟩ |
-| **F1** | ⟨…⟩ |
-| accuracy | ⟨…⟩ |
+| metric (profane class = 1) | value | 95% bootstrap CI |
+|---|---:|---|
+| test examples | 2,009 (617 profane, 1,392 clean) | |
+| precision | **0.951** | 0.934 – 0.967 |
+| recall | **0.947** | 0.926 – 0.963 |
+| **F1** | **0.949** | 0.935 – 0.961 |
+| accuracy | 0.969 | |
 
 ![confusion matrix](results/confusion_matrix.png)
 
-**Recall by category** (from `recall_by_profanity_type` / `recall_by_script`): ⟨FILL⟩
+TN = 1,362 · **FP = 30** · **FN = 33** · TP = 584. So 30 clean reviews were wrongly flagged and 33 profane reviews were missed.
+
+**Recall by category** (how many profane reviews of each kind were caught):
+
+| profanity type | n | recall | | script | n | recall |
+|---|---:|---:|---|---|---:|---:|
+| Kazakh obscene | 193 | 0.964 | | Cyrillic with Kazakh letters | 424 | 0.948 |
+| mixed Kazakh + Russian | 60 | 0.967 | | Cyrillic without Kazakh letters | 178 | 0.938 |
+| Russian obscene | 131 | 0.947 | | Latin | 15 | 1.000 |
+| insult only | 215 | 0.935 | | | | |
+| masked only | 9 | 0.778 | | | | |
+| other (e.g. *шешең*) | 9 | 0.889 | | | | |
+
+**False-positive rate by type of clean review:** insult word used literally **27%** (3 of 11), classmate's clean reviews 3.1%,
+negative reviews 2.3%, look-alike words 1.5%, random reviews 1.4%. So the hardest clean reviews are those where an insult word
+is used literally (*мал іздесең* = "if you search for livestock").
 
 ### Reliability (Week 5 lecture)
-- **95% bootstrap confidence intervals** (1,000 resamples of the test set): F1 ⟨…–…⟩, precision ⟨…–…⟩, recall ⟨…–…⟩.
-- **Calibration:** temperature *T* = ⟨…⟩; ECE before ⟨…⟩ → after ⟨…⟩. Temperature scaling does not change which reviews are flagged;
-  it only makes "p = 0.9" closer to "right 9 times out of 10".
-- **Abstention:** if reviews with 0.2 < p < 0.8 are sent to a human, the model decides ⟨coverage⟩ of reviews automatically
-  with F1 ⟨…⟩, and ⟨N⟩ reviews go to the moderator.
+- **Uncertainty:** with 95% confidence the F1 lies between 0.935 and 0.961 (1,000 bootstrap resamples of the test set).
+- **Calibration:** the fitted temperature is *T* = 2.0, which means the raw model was over-confident. ECE went **0.033 → 0.014**.
+  The flagged reviews stay the same; only the probabilities became more honest.
+- **Abstention:** only 23 test reviews (1.1%) are "unsure" (0.2 < p < 0.8). If they go to a human, the model decides
+  98.9% of reviews automatically with F1 0.954.
 
 ### Robustness stress test
-The same test reviews were rewritten by the 4 augmentation types (masked, symbols, Latin, no Kazakh letters), and the
-F1 of the model and of the word list was measured again (`results/robustness.json`): ⟨FILL⟩
+The same test reviews were rewritten in 4 ways and scored again ([`results/robustness.json`](results/robustness.json)):
 
-Saved files: [`results/test_metrics.json`](results/test_metrics.json), [`results/test_predictions.csv`](results/test_predictions.csv),
-[`results/errors_false_positives.csv`](results/errors_false_positives.csv), [`results/errors_false_negatives.csv`](results/errors_false_negatives.csv),
-[`results/training_log.json`](results/training_log.json), [`results/ablation.md`](results/ablation.md).
+| change | example | model F1 before → after | word list F1 after |
+|---|---|---|---:|
+| one letter masked | *сіг\*лгір оиын* | 0.938 → **0.492** | 0.941 |
+| symbols for letters | *сігілг1р оиын* | 0.935 → **0.816** | 0.714 |
+| whole review in Latin | *sigilgir oiyn* | 0.948 → 0.916 | 0.944 |
+| no Kazakh letters | *Сигилгир оиын* | 0.952 → 0.918 | 0.960 |
+
+- The model handles **Latin** and **missing Kazakh letters** well (−3 points) thanks to normalization and its sub-word tokenizer.
+- With **symbols** it beats the word list (0.816 vs 0.714): the word list only knows exact stems.
+- **Masking is the weak point** (0.49). The chosen model was trained *without* augmentation, and the word list has a special
+  un-masking rule. This trade-off was not visible on the validation set (it has almost no masked reviews).
 
 ### What the errors mean for moderation
 - **False positive (FP):** a clean review is flagged. A real customer's honest (often negative) opinion could be hidden,
   which is unfair to the user and hurts the shop's transparency.
 - **False negative (FN):** a profane or insulting review is missed and stays visible to everyone, including children.
 - If reviews are **hidden automatically**, FPs are more harmful, so precision matters most. If flagged reviews only
-  **go to a human moderator**, recall matters more. Our threshold maximizes F1 (a balance); a platform can move it without retraining.
+  **go to a human moderator**, recall matters more. Our threshold (0.93 on calibrated probabilities) maximizes validation F1,
+  and the result is balanced (30 FP vs 33 FN). A platform can lower the threshold for more recall without retraining.
 
 ### Error analysis
-⟨FILL: at least 3 real mistakes from results/errors_*.csv with the likely reason⟩
+All errors are in [`results/errors_false_positives.csv`](results/errors_false_positives.csv) and
+[`results/errors_false_negatives.csv`](results/errors_false_negatives.csv).
+
+**1. Some "false positives" are really labeling mistakes: the model found profanity our word list missed.**
+*"Зайбпл екен"* (typo of *зайбал*), *"Жаман тотакбас"* (typo of *қотақбас*), *"Пидезко бул оиын"* (*пиздец*),
+*"Пипес ойын"* (a euphemism), *"…ФФ КЕЛЕ ЖАТЫР ЧМО"* (a Russian insult), *"Катындарский ойын"*.
+All got p ≈ 0.96–0.97 but are labeled 0. *Reason:* the labels came from a word list plus hand checks, and typos outside the list
+were never shown to a human. The model learned the *pattern* of the words, not just the list. About 6 of the 30 FPs look like
+this, so the true precision is probably higher than 0.951.
+
+**2. Insult words used literally or as slang.**
+*"Тауар жынды, өте мықты"* (*жынды* = "crazy good", a positive review), *"…мал іздесең регионды таңдай алмайсың"*
+(searching for livestock in an app), *"…біз мал секілдіміз"* ("they treat us like cattle"), *"Маған осы амок ас үнайды"*
+(the game *Among Us*), *"маладець"*, *"шешендік"* (eloquence). *Reason:* the word looks like an insult and only the context
+says otherwise. There are few such examples in training (only 37 "insult word used literally" reviews in train). This group has the
+highest FP rate (27%).
+
+**3. One rude word inside a long, polite or mostly-Russian review.**
+*"Урод новый версиясы…"* (p = 0.02), *"…без мб кретин қлсаңздар"*, *"…ТУПОЙ ПРОГРАММА"*,
+*"После последнего обновления МАЛ болды…"*, *"Таңғажайып пернетақта… ЛАТИННИЦАНЫ "нахуй" алып тастаңдаршы"*,
+*"…грёбаный иандекs браузер… На хрен маған…"*. *Reason:* most of the text is neutral, the rude word is rare (*урод, кретин*)
+or written in CAPITALS, and Russian-only insults appear less often in training than Kazakh ones. The model gives the
+whole review a low score.
+
+**4. Masked or heavily hidden words.**
+*"\*\*\*\*\* \*\*\*\* \*\*\*\* бундай приложениянды 667 !!!"* (p = 0.03), *"С@ки бл вы почему…"* (0.20),
+*"Кірмейт, н\*\*\* керек емес"* (0.84, just below the threshold). Only 7 of 9 masked-only test reviews were caught, and the
+stress test confirms masking is the main weakness (F1 0.49).
+
+**5. Rare spelling variants of Kazakh verbs:** *"Сыкты ойн"*, *"…сігіспей қаладыго"* (p ≈ 0.02). The *сігу* family has many
+forms, and these particular spellings are rare in training.
 
 ### Possible improvements
-⟨ADD the improvements that follow from the error analysis⟩. General ideas, not done here because of time:
-- **Domain-adaptive pretraining:** continue XLM-R's masked-language-model training on all 168k unlabeled KazSAnDRA reviews
-  before fine-tuning, so the model learns the slang of reviews.
-- **Small hyper-parameter search on validation:** learning rate {1e-5, 2e-5, 3e-5}, epochs, max length.
-- **A bigger model** (`xlm-roberta-large`, 560M) or an **ensemble** of a few seeds (average their probabilities).
-- **Active learning / self-training:** let the model label new reviews, check its most uncertain ones by hand, add them to training.
-- **More labelers** for the borderline insult cases, and a separate test set from marketplace reviews.
+1. **Fix the labels found in error type 1.** Re-check the model's most confident "false positives" and its least confident
+   positives by hand, then relabel. This is cheap active learning, and our test labels would become cleaner too.
+2. **Combine the model with the word list for masked words** (flag if the model OR the un-masking rule fires), or choose
+   between "normalized" and "normalized + augmentation" using a validation set that also contains rewritten reviews.
+3. **More hard negatives** with insult words used literally (*мал базары, жынды тауар*), and more Russian-only insults
+   (*урод, кретин, чмо*).
+4. **Lower-casing** as one more normalization step (several misses are in CAPITALS) — test it as a new ablation.
+5. General ideas: continue XLM-R's pretraining on all 168k unlabeled reviews (domain adaptation), a small learning-rate
+   search, `xlm-roberta-large`, or an ensemble of several seeds.
 
 ---
 
@@ -368,10 +430,12 @@ Saved files: [`results/test_metrics.json`](results/test_metrics.json), [`results
   Where the two of us disagreed, I made the final decision, so there is no fully independent third check.
 - Candidates were found with a lexicon, so the test set mostly has **known word families**. The score probably overestimates
   performance on brand-new slang and on hidden insults with no rude word at all.
-- **Domain imbalance:** 4,072 of 4,113 profane reviews come from the app store (games/apps, often written by teenagers).
+- **Domain imbalance:** 4,073 of 4,115 profane reviews come from the app store (games/apps, often written by teenagers).
   Performance on formal marketplace reviews is less certain.
-- **Small groups:** the test set has only 43 Latin reviews and 8 masked-only profane reviews, so their recall numbers are
+- **Small groups:** the test set has only 15 Latin and 9 masked-only profane reviews, so their recall numbers are
   uncertain. The robustness test uses *synthetic* changes, which may differ from how people really hide words.
+- **Label noise:** error analysis found test reviews labeled 0 that are actually profane (typos outside the word list),
+  so the reported precision is slightly pessimistic.
 - Where to draw the line between insult and rudeness (*мал* = 1, *далбаса* = 0) is a design decision.
 - The model is ~560 MB and needs a GPU for fast training; CPU inference works but is slower.
 
