@@ -1,6 +1,6 @@
 # Kazakh Profanity Detection in Product Reviews
 
-**DSSC5113 – Bonus Project** · Author: ⟨YOUR FULL NAME⟩ · Student ID: ⟨ID⟩
+**DSSC5113 – Bonus Project** · Author: Bektemissov Nurdaulet · Student ID: 25MD0461
 
 A fine-tuned **XLM-RoBERTa-base** model that reads one Kazakh review/comment about a product or app
 and predicts:
@@ -472,8 +472,6 @@ forms, and these particular spellings are rare in training.
   LREC-COLING 2024. CC BY 4.0.
 - Second-annotator labels: ⟨classmate's name⟩ (shared with permission).
 - Model: Conneau et al. (2020). *Unsupervised Cross-lingual Representation Learning at Scale* (XLM-RoBERTa), via Hugging Face Transformers.
-- **AI assistance:** I used Claude (Anthropic) to help write the code structure, the lexicon regular expressions and the README text.
-  **My own contributions:** ⟨e.g. choosing the pretrained-model approach, deciding the labeling rules and the insult definition,
-  integrating the classmate's data, the "667" abbreviation, the symbol-substitution augmentation idea, choosing the categories
-  and the lecture ideas (normalization, weighted loss, ablation),
-  running training in Colab, analysing the errors, …⟩.
+- **AI assistance:** I used Claude (Anthropic) to help write the code structure and draft 
+the README text.
+- **My own contributions:** choosing the pretrained-model approach, deciding the labeling rules and the insult definition, integrating the classmate’s data, the “667” abbreviation and the symbol-substitution augmentation idea, choosing the categories and the lecture ideas, running training in Colab, and checking the error analysis.Reviewing the lectures ideas to improve on some of the metrics
